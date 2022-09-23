@@ -1,5 +1,4 @@
-# Recipe Web Generator: Foodgram (Server Edition) #
-*For a while this project will be available online via remote server, but after a suspension of a virtual machine only local version of the project will be operable. Check it out here: https://github.com/Immalakhovskii/recipe-generator-local*
+# Recipe Web Generator: Foodgram (Local Edition) #
 
 ---
 #### Description ####

@@ -11,7 +11,7 @@ services:
       - .env
   
   backend:
-    image: sky4p/backend_foodgram:latest
+    image: sky4p/backend_foodgram_local:latest
     restart: always
     command: >
       sh -c "python manage.py collectstatic --noinput &&
@@ -39,8 +39,8 @@ services:
       - '80:80'
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./frontend/build:/usr/share/nginx/html/
-      - ./docs/:/usr/share/nginx/html/api/docs/
+      - ../frontend/build:/usr/share/nginx/html/
+      - ../docs/:/usr/share/nginx/html/api/docs/
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
