@@ -7,10 +7,13 @@ Foodgram is a site that stores, shows and filters recipes from different authors
 #### Try it out via Docker ####
 ```
 # clone repository
-git clone https://github.com/Immalakhovskii/infra_sp2.git
+git clone https://github.com/Immalakhovskii/recipe-maker-local.git
 
 # change directory to infra/
 cd foodgram-project-react-local/infra
+
+# create .env file and fill it with .env.example data
+cp .env.example .env
 
 # create and activate Docker containers
 docker-compose up -d --build
@@ -37,6 +40,7 @@ docker-compose up -d
 docker-compose exec web python manage.py createsuperuser
 ```
 - Note that to perform docker comands **Docker must be installed and running** on your computer (https://www.docker.com/products/docker-desktop/)
+- Examples and values of enviromental variables can be seen at infra/.env.example
 #### CSV script ####
 The project has prearranged csv file with 2.2K ingredients with measurement units. They are can be installed with custom csv script:
 ```
