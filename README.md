@@ -40,7 +40,6 @@ docker-compose up -d
 docker-compose exec web python manage.py createsuperuser
 ```
 - Note that to perform docker comands **Docker must be installed and running** on your computer (https://www.docker.com/products/docker-desktop/)
-- Examples and values of enviromental variables can be seen at infra/.env.example
 #### CSV script ####
 The project has prearranged csv file with 2.2K ingredients with measurement units. They are can be installed with custom csv script:
 ```
