@@ -37,7 +37,7 @@ docker-compose down -v
 docker-compose up -d
 
 # create superuser in case you need access to admin site
-docker-compose exec web python manage.py createsuperuser
+docker-compose exec backend python manage.py createsuperuser
 ```
 - Note that to perform docker comands **Docker must be installed and running** on your computer (https://www.docker.com/products/docker-desktop/)
 #### CSV script ####
