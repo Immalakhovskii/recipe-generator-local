@@ -29,7 +29,7 @@ services:
   frontend:
     image: sky4p/frontend_foodgram:latest
     volumes:
-      - ./frontend/:/app/result_build/
+      - ../frontend/:/app/result_build/
     depends_on:
       - backend
 
