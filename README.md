@@ -43,13 +43,13 @@ docker-compose exec backend python manage.py createsuperuser
 #### Admin Zone ####
 Admin zone has some special features: 
 - Recipes can be searched by name, author username and tags; ingredients can be searched by name
-- Recipe model has ManyToManyField ingredients with throgh property so recipe creation page in admin zone has IngredientInline with formset restriction so admin won't be able to create recipe without ingredients.
+- Recipe model has ManyToManyField ingredients with throgh property so recipe creation page in admin zone has IngredientInline with formset restriction so admin won't be able to create recipe without ingredients
 #### CSV Script ####
 The project has prearranged CSV file with 2.2K ingredients with measurement units. They are can be installed with custom CSV script:
 ```
 docker-compose exec backend python manage.py csv_script
 ```
-Note that file contains strings in Russian
+- Note that file contains strings in Russian
 #### GitHub Actions ####
 ![Workflow badge](https://github.com/Immalakhovskii/recipe-maker-local/actions/workflows/foodgram_workflow.yml/badge.svg?event=push)  
 On every push to GitHub the project passes Flake8 tests and updated version of backend Docker image pushes to Docker Hub
