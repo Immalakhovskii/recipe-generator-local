@@ -1,4 +1,4 @@
-# Recipe Maker: Foodgram (Local Edition) #
+# Recipe Maker: Foodgram (Docker Edition) #
 
 #### Technology Stack ####
 Python 3.7 / Django 2.2.19 / Django REST framework 3.13.1 / PostgreSQL 13.0 / Djoser 2.1.0 / Docker 20.10.17 / Node.js 13.12.0 (used in prearranged frontend made with React)
