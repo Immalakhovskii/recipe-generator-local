@@ -28,7 +28,7 @@ class RecipeFilter(filters.FilterSet):
         user = self.request.user
         if not user.is_authenticated or not value:
             return queryset
-        elif name == 'is_favorited':
+        if name == 'is_favorited':
             return queryset.filter(favorite_recipe__user=user)
         return queryset.filter(recipe_to_cart__user=user)
 
