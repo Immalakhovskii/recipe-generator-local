@@ -47,7 +47,6 @@ class SubscriptionSerializer(CustomUserSerializer):
             return RecipeSnippetSerializer(
                 instance=obj.author.all()[:int(recipes_limit)],
                 many=True).data
-        instance = obj.author.all()
         return RecipeSnippetSerializer(
-            instance=instance,
+            instance=obj.author.all(),
             many=True).data
