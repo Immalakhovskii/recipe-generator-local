@@ -18,11 +18,18 @@ class IngredientSerializer(serializers.ModelSerializer):
 
 
 class IngredientAmountSerializer(IngredientSerializer):
+
     def to_representation(self, instance):
+        try:
+            recipe = self.root.child._instance
+        except Exception:
+            recipe = self.root.instance
+
         representation = super().to_representation(instance)
         representation['amount'] = (
-            IngredientAmount.objects.filter(ingredient=instance)
-            .values('amount')[0]['amount']
+            IngredientAmount.objects.get
+            (ingredient=instance, recipe=recipe)
+            .amount
         )
         return representation
 
@@ -50,6 +57,10 @@ class RecipeGetSerializer(serializers.ModelSerializer):
     def get_is_in_shopping_cart(self, obj):
         return RecipeGetSerializer.get_is_favorited(
             self, obj, model=ShoppingCartItem)
+
+    def to_representation(self, instance):
+        self._instance = instance
+        return super(RecipeGetSerializer, self).to_representation(instance)
 
 
 class IngredientAmountPostSerializer(serializers.ModelSerializer):
